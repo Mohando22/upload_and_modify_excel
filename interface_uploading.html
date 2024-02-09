@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Charger un fichier Excel modifié</title>
+    <script>
+        window.onload = function() {
+            // Extraire l'ID du fichier de l'URL
+            var params = new URLSearchParams(window.location.search);
+            var fileId = params.get('id');
+            // Définir la valeur du champ caché avec l'ID du fichier
+            document.getElementById('file_id').value = fileId;
+        };
+    </script>
+</head>
+<body>
+    <h2>Charger un fichier Excel modifié</h2>
+    <form action="upload_modified_excel.php" method="post" enctype="multipart/form-data">
+        Sélectionnez le fichier Excel modifié à charger :
+        <input type="file" name="modified_excel" id="modified_excel">
+        <input type="hidden" name="file_id" id="file_id" value="">
+        <input type="submit" value="Charger le fichier" name="submit">
+    </form>
+</body>
+</html>
+
